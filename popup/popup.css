@@ -1,0 +1,294 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 500px;
+  min-height: 400px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 12px;
+  gap: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #89b4fa;
+}
+
+.header-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.btn {
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #89b4fa;
+  color: #1e1e2e;
+  padding: 8px 16px;
+  font-size: 13px;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background-color: #74c7ec;
+}
+
+.btn-secondary {
+  background-color: #313244;
+  color: #cdd6f4;
+  padding: 6px 12px;
+}
+
+.btn-secondary:hover {
+  background-color: #45475a;
+}
+
+.btn-view {
+  background-color: #313244;
+  color: #cdd6f4;
+  padding: 5px 10px;
+}
+
+.btn-view.active {
+  background-color: #89b4fa;
+  color: #1e1e2e;
+}
+
+.btn-view:hover:not(.active) {
+  background-color: #45475a;
+}
+
+.btn-small {
+  background-color: #313244;
+  color: #cdd6f4;
+  padding: 4px 8px;
+  font-size: 11px;
+}
+
+.btn-small:hover {
+  background-color: #45475a;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#json-input {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #45475a;
+  border-radius: 8px;
+  background-color: #181825;
+  color: #cdd6f4;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 12px;
+  resize: vertical;
+}
+
+#json-input:focus {
+  outline: none;
+  border-color: #89b4fa;
+}
+
+#json-input::placeholder {
+  color: #6c7086;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.search-box {
+  flex: 1;
+  min-width: 120px;
+}
+
+#search-input {
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid #45475a;
+  border-radius: 6px;
+  background-color: #181825;
+  color: #cdd6f4;
+  font-size: 12px;
+}
+
+#search-input:focus {
+  outline: none;
+  border-color: #89b4fa;
+}
+
+#search-input::placeholder {
+  color: #6c7086;
+}
+
+.view-toggle {
+  display: flex;
+  gap: 2px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.output-section {
+  flex: 1;
+  min-height: 200px;
+  max-height: 400px;
+  overflow-y: auto;
+  background-color: #181825;
+  border: 1px solid #45475a;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.output-section::-webkit-scrollbar {
+  width: 6px;
+}
+
+.output-section::-webkit-scrollbar-track {
+  background: #181825;
+}
+
+.output-section::-webkit-scrollbar-thumb {
+  background-color: #45475a;
+  border-radius: 3px;
+}
+
+.json-tree {
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.json-tree ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.json-tree > ul {
+  padding-left: 0;
+}
+
+.json-key {
+  color: #89b4fa;
+}
+
+.json-string {
+  color: #a6e3a1;
+}
+
+.json-number {
+  color: #fab387;
+}
+
+.json-boolean {
+  color: #cba6f7;
+}
+
+.json-null {
+  color: #f38ba8;
+}
+
+.json-bracket {
+  color: #6c7086;
+}
+
+.json-comma {
+  color: #6c7086;
+}
+
+.toggle-btn {
+  cursor: pointer;
+  display: inline-block;
+  width: 16px;
+  text-align: center;
+  color: #6c7086;
+  user-select: none;
+  font-size: 10px;
+}
+
+.toggle-btn:hover {
+  color: #89b4fa;
+}
+
+.collapsible-content.collapsed {
+  display: none;
+}
+
+.collapsed-placeholder {
+  color: #6c7086;
+  font-style: italic;
+}
+
+.json-raw {
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: #cdd6f4;
+  margin: 0;
+}
+
+.highlight {
+  background-color: #f9e2af;
+  color: #1e1e2e;
+  border-radius: 2px;
+  padding: 0 2px;
+}
+
+.error-message {
+  background-color: #45475a;
+  border: 1px solid #f38ba8;
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: #f38ba8;
+  font-size: 12px;
+}
+
+.status-bar {
+  font-size: 11px;
+  color: #6c7086;
+  text-align: right;
+  padding-top: 4px;
+  border-top: 1px solid #313244;
+}
+
+.hidden {
+  display: none !important;
+}
