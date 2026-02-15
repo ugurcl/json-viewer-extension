@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Viewer</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>JSON Viewer</h1>
+      <div class="header-actions">
+        <button id="btn-paste" class="btn btn-secondary" title="Paste from clipboard">Paste</button>
+        <button id="btn-clear" class="btn btn-secondary" title="Clear editor">Clear</button>
+      </div>
+    </header>
+
+    <div class="input-section">
+      <textarea id="json-input" placeholder="Paste your JSON here..."></textarea>
+      <button id="btn-format" class="btn btn-primary">Format JSON</button>
+    </div>
+
+    <div class="toolbar">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search keys or values..." />
+      </div>
+      <div class="view-toggle">
+        <button id="btn-tree" class="btn btn-view active" title="Tree View">Tree</button>
+        <button id="btn-raw" class="btn btn-view" title="Raw View">Raw</button>
+      </div>
+      <div class="toolbar-actions">
+        <button id="btn-expand-all" class="btn btn-small" title="Expand All">Expand</button>
+        <button id="btn-collapse-all" class="btn btn-small" title="Collapse All">Collapse</button>
+        <button id="btn-copy" class="btn btn-small" title="Copy formatted JSON">Copy</button>
+      </div>
+    </div>
+
+    <div id="output-section" class="output-section">
+      <div id="json-tree" class="json-tree"></div>
+      <pre id="json-raw" class="json-raw hidden"></pre>
+    </div>
+
+    <div id="error-message" class="error-message hidden"></div>
+    <div id="status-bar" class="status-bar">Ready</div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
