@@ -2,6 +2,10 @@
 
 A Chrome extension that automatically detects JSON responses and formats them with syntax highlighting, tree view, search and filtering.
 
+## Screenshot
+
+![JSON Viewer in action](screenshots/jsonplaceholder.typicode.com_users.png)
+
 ## Features
 
 - Auto-detect JSON on any page and format it
